@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap');
+
+:root {
+    --neon-pink: #FF00A1;
+    --neon-blue: #02B1F4;
+}
+body {
+    background-color: #0a0a15;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+}
+h1, h2, h3, .font-futuristic {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+}
+.neon-text-pink {
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+}
+.neon-text-blue {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+.neon-border-pink {
+    border: 2px solid var(--neon-pink);
+    box-shadow: 0 0 15px var(--neon-pink), inset 0 0 15px var(--neon-pink);
+}
+.neon-border-blue {
+    border: 2px solid var(--neon-blue);
+    box-shadow: 0 0 15px var(--neon-blue), inset 0 0 15px var(--neon-blue);
+}
+.neon-box {
+    position: relative;
+}
+.neon-box::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue), var(--neon-pink));
+    z-index: -1;
+    filter: blur(20px);
+    opacity: 0.5;
+}
+.grid-pattern {
+    background-image: 
+        linear-gradient(rgba(2, 177, 244, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(2, 177, 244, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.glow-hover:hover {
+    filter: drop-shadow(0 0 8px currentColor);
+    transition: filter 0.3s ease;
+}
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+.pulse {
+    animation: pulse 3s infinite;
+}
+
+.glow-hover:hover {
+filter: none;
+box-shadow: 0 0 15px var(--neon-pink);
+transition: box-shadow 0.3s ease;
+}
